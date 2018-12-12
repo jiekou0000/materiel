@@ -1,0 +1,25 @@
+server:
+  port: 80
+
+spring:
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/materials?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+wx:
+  serverUrl: http://lijian.host.wenmingkeji.com
+  subscribeReply: 您好！欢迎你的到来！;
+    客服热线：1880001111
+
+logging:
+  file: ./mylogs/materials.log
+  level.: ERROR
+  level.com.cane: INFO
