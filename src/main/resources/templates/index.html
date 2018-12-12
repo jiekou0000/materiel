@@ -1,6 +1,103 @@
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/head"></head>
+
 <body>
-<h3>hello bill</h3>
+<!--轮播-->
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="swiper-list">
+        <img src="/img/sy_banner@2x.png" width="100%" height="100%"/>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-list">
+        <img src="/img/sy_banner@2x.png" width="100%" height="100%"/>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-list">
+        <img src="/img/sy_banner@2x.png" width="100%" height="100%"/>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!---->
+<div class="five-contianer">
+  <ul class="clear">
+    <li><a href="newsTask.html">
+      新手任务
+    </a></li>
+    <li><a href="helpCenter.html">
+      帮助中心
+    </a></li>
+    <li><a href="industry.html">
+      行业资讯
+    </a></li>
+    <li><a href="newsNotice.html">
+      最新公告
+    </a></li>
+    <li><a href="appDown.html">
+      APP下载
+    </a></li>
+
+    <li><a href="newsTask.html">
+      新手任务
+    </a></li>
+    <li><a href="helpCenter.html">
+      帮助中心
+    </a></li>
+    <li><a href="industry.html">
+      行业资讯
+    </a></li>
+    <li><a href="newsNotice.html">
+      最新公告
+    </a></li>
+    <li><a href="appDown.html">
+      APP下载
+    </a></li>
+  </ul>
+</div>
+
+<!--配资-->
+<div class="four-funding">
+  <ul class="clear fund-list">
+    <li class="active">按月配资</li>
+    <li>按天配资</li>
+    <li>免息配资</li>
+    <li>免费配资</li>
+  </ul>
+  <div class="fund-center">
+    <div class="fund-img">
+      <p class="title">资金：<b class="red txt-s16">1000</b>元起&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;倍数：最高<b
+              class="red txt-s16">10</b>倍</p>
+				<span class="tip-title">
+					极速开户，利率低至0.8%/月 <br>
+					最低1月起配未申请终止操盘，延续自动延期
+				</span>
+    </div>
+  </div>
+  <button type="button" class="btn lite-btn">立即配资</button>
+</div>
+
+<!--底部-->
+<footer th:include="base/footer"></footer>
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    spaceBetween: 0,
+    autoplay: 2500
+  });
+</script>
+<script>
+  $(function () {
+    $('#demo1').scrollbox();
+  })
+</script>
 </body>
 </html>

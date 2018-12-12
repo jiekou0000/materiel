@@ -1,69 +1,66 @@
 <div class="foot-wrap">
-    <ul class="clear">
-        <li class="my_active">
-            <a href="/wap/index.html">
-                <span><img class="my_img" src="/resources/wap/img/sy_yx@2x.png"/></span>
-                首页
-            </a>
-        </li>
-        <li class="my_active">
-            <a href="/wap/allocation/month.html">
-                <span><img class="my_img" src="/resources/wap/img/pz_wx@2x.png"/></span>
-                配资
-            </a>
-        </li>
-        <li class="my_active">
-            <a href="/wap/popularize/index.html">
-                <span><img class="my_img" src="/resources/wap/img/tg_wx@2x.png"/></span>
-                推广
-            </a>
-        </li>
-        <li class="my_active">
-            <a href="/wap/customer/index.html">
-                <span><img class="my_img" src="/resources/wap/img/kf_wx@2x.png"/></span>
-                客服
-            </a>
-        </li>
-        <li class="my_active">
-            <a href="/wap/account/index.html">
-                <span><img class="my_img" src="/resources/wap/img/wd_wx@2x.png"/></span>
-                我的
-            </a>
-        </li>
-    </ul>
+  <ul class="clear">
+    <li class="my_active">
+      <a href="/wap/index.html">
+        <span><img class="my_img" src="/img/sy_yx@2x.png"/></span>
+        首页
+      </a>
+    </li>
+    <li class="my_active">
+      <a href="/wap/allocation/month.html">
+        <span><img class="my_img" src="/img/pz_wx@2x.png"/></span>
+        配资
+      </a>
+    </li>
+    <li class="my_active">
+      <a href="/wap/popularize/index.html">
+        <span><img class="my_img" src="/img/tg_wx@2x.png"/></span>
+        推广
+      </a>
+    </li>
+    <li class="my_active">
+      <a href="/wap/customer/index.html">
+        <span><img class="my_img" src="/img/kf_wx@2x.png"/></span>
+        客服
+      </a>
+    </li>
+    <li class="my_active">
+      <a href="/wap/account/index.html">
+        <span><img class="my_img" src="/img/wd_wx@2x.png"/></span>
+        我的
+      </a>
+    </li>
+  </ul>
 </div>
 
 <script>
+  $(function () {
+    $('.my_img').each(function () {
+      $(this).attr('src', $(this).attr('src').replace('yx', 'wx'));
+    });
 
-    $(function () {
-
-        $('.my_img').each(function () {
-            $(this).attr('src', $(this).attr('src').replace('yx', 'wx'));
-        });
-
-        var begtitle = "首页";
-        var pathname = window.location.pathname.slice(1);
-        if (pathname.indexOf('wap/allocation/') != -1) {
-            begtitle = "配资";
-            $('.my_active:eq(1)').addClass("active").siblings('.active').removeClass('active');
-            $('.my_img:eq(1)').attr('src', $('.my_img:eq(1)').attr('src').replace('wx', 'yx'));
-        } else if (pathname.indexOf('wap/popularize/index.html') != -1) {
-            begtitle = "推广";
-            $('.my_active:eq(2)').addClass("active").siblings('.active').removeClass('active');
-            $('.my_img:eq(2)').attr('src', $('.my_img:eq(2)').attr('src').replace('wx', 'yx'));
-        } else if (pathname.indexOf('wap/customer/index.html') != -1) {
-            begtitle = "客服";
-            $('.my_active:eq(3)').addClass("active").siblings('.active').removeClass('active');
-            $('.my_img:eq(3)').attr('src', $('.my_img:eq(3)').attr('src').replace('wx', 'yx'));
-        } else if (pathname.indexOf('wap/account/index.html') != -1) {
-            begtitle = "我的";
-            $('.my_active:eq(4)').addClass("active").siblings('.active').removeClass('active');
-            $('.my_img:eq(4)').attr('src', $('.my_img:eq(4)').attr('src').replace('wx', 'yx'));
-        } else {
-            $('.my_active:eq(0)').addClass("active").siblings('.active').removeClass('active');
-            $('.my_img:eq(0)').attr('src', $('.my_img:eq(0)').attr('src').replace('wx', 'yx'));
-        }
-        document.title = begtitle + " - " + $(document).attr("title");
-    })
-
+    var begtitle = "首页";
+    var pathname = window.location.pathname.slice(1);
+    if (pathname.indexOf('wap/allocation/') != -1) {
+      begtitle = "配资";
+      $('.my_active:eq(1)').addClass("active").siblings('.active').removeClass('active');
+      $('.my_img:eq(1)').attr('src', $('.my_img:eq(1)').attr('src').replace('wx', 'yx'));
+    } else if (pathname.indexOf('wap/popularize/index.html') != -1) {
+      begtitle = "推广";
+      $('.my_active:eq(2)').addClass("active").siblings('.active').removeClass('active');
+      $('.my_img:eq(2)').attr('src', $('.my_img:eq(2)').attr('src').replace('wx', 'yx'));
+    } else if (pathname.indexOf('wap/customer/index.html') != -1) {
+      begtitle = "客服";
+      $('.my_active:eq(3)').addClass("active").siblings('.active').removeClass('active');
+      $('.my_img:eq(3)').attr('src', $('.my_img:eq(3)').attr('src').replace('wx', 'yx'));
+    } else if (pathname.indexOf('wap/account/index.html') != -1) {
+      begtitle = "我的";
+      $('.my_active:eq(4)').addClass("active").siblings('.active').removeClass('active');
+      $('.my_img:eq(4)').attr('src', $('.my_img:eq(4)').attr('src').replace('wx', 'yx'));
+    } else {
+      $('.my_active:eq(0)').addClass("active").siblings('.active').removeClass('active');
+      $('.my_img:eq(0)').attr('src', $('.my_img:eq(0)').attr('src').replace('wx', 'yx'));
+    }
+    document.title = begtitle + " - " + $(document).attr("title");
+  })
 </script>

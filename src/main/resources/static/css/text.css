@@ -29,7 +29,7 @@
     height: .35rem;
     overflow: hidden;
     position: relative;
-    background:url(../img/laba.png) .1rem center no-repeat;
+    background:url(/img/laba.png) .1rem center no-repeat;
     background-size: .25rem .23rem;
 }
 .scroll-text {
@@ -91,23 +91,43 @@
 	padding-top:.55rem;	
 }
 .five-contianer li:first-child a {
-	background:url(../img/sy_xsrw@2x.png) top center no-repeat;
+	background:url(/img/sy_xsrw@2x.png) top center no-repeat;
 	background-size: .45rem .45rem;
 }
 .five-contianer li:nth-child(2) a {
-	background:url(../img/sy_bazx@2x.png) top center no-repeat;
+	background:url(/img/sy_bazx@2x.png) top center no-repeat;
 	background-size: .45rem .45rem;
 }
 .five-contianer li:nth-child(3) a {
-	background:url(../img/sy_hyzx@2x.png) top center no-repeat;
+	background:url(/img/sy_hyzx@2x.png) top center no-repeat;
 	background-size: .45rem .45rem;
 }
 .five-contianer li:nth-child(4) a {
-	background:url(../img/sy_zxgg@2x.png) top center no-repeat;
+	background:url(/img/sy_zxgg@2x.png) top center no-repeat;
+	background-size: .45rem .45rem;
+}
+.five-contianer li:nth-child(5) a {
+	background:url(/img/sy_bazx@2x.png) top center no-repeat;
+	background-size: .45rem .45rem;
+}
+.five-contianer li:nth-child(6) a {
+	background:url(/img/sy_hyzx@2x.png) top center no-repeat;
+	background-size: .45rem .45rem;
+}
+.five-contianer li:nth-child(7) a {
+	background:url(/img/sy_zxgg@2x.png) top center no-repeat;
+	background-size: .45rem .45rem;
+}
+.five-contianer li:nth-child(8) a {
+	background:url(/img/sy_hyzx@2x.png) top center no-repeat;
+	background-size: .45rem .45rem;
+}
+.five-contianer li:nth-child(9) a {
+	background:url(/img/sy_zxgg@2x.png) top center no-repeat;
 	background-size: .45rem .45rem;
 }
 .five-contianer li:last-child a {
-	background:url(../img/sy_appxz@2x.png) top center no-repeat;
+	background:url(/img/sy_appxz@2x.png) top center no-repeat;
 	background-size: .45rem .45rem;
 }
 
@@ -134,7 +154,7 @@
 }
 .four-funding .fund-list li.active {
 	color:#FF4429;
-	background:url(../img/sy_gx.png) right bottom no-repeat #FFF4EE;
+	background:url(/img/sy_gx.png) right bottom no-repeat #FFF4EE;
 }
 .fund-center {
 	padding:0 .25rem .1rem .25rem;
@@ -144,7 +164,7 @@
 }
 .fund-img {
 	padding-top:.35rem;
-	background:url(../img/sy_tj@2x.png) right top no-repeat #FFF4EE;
+	background:url(/img/sy_tj@2x.png) right top no-repeat #FFF4EE;
 	background-size: .4rem .4rem;
 }
 .fund-center p.title {
@@ -211,7 +231,7 @@
 	display: inline-block;
 	width:.2rem;
 	height:.2rem;
-	background:url(../img/dl_zy.png) no-repeat;
+	background:url(/img/dl_zy.png) no-repeat;
 	background-size: .15rem;
 	position: absolute;
 	top:.12rem;right:.1rem;
@@ -302,7 +322,7 @@
 .news-banner {
 	width:100%;
 	min-height:1.4rem;
-	background:url(../img/xsrw_banner@2x.png) no-repeat;
+	background:url(/img/xsrw_banner@2x.png) no-repeat;
 	background-size: 100% 100%;
 }
 .news-container .news-list > p{
@@ -361,7 +381,7 @@
     right: .1rem;
     bottom: .1rem;
     z-index: 9;
-    background: url(../img/xsrw_ywc.png) no-repeat;
+    background: url(/img/xsrw_ywc.png) no-repeat;
 }
 
 /*帮助中心*/
@@ -376,7 +396,7 @@
 	display: block;
 	padding:.15rem 0;
 	color:#000;
-	background:url(../img/sy_right.png) right center no-repeat;
+	background:url(/img/sy_right.png) right center no-repeat;
 	background-size:.15rem .15rem;
 }
 
@@ -622,35 +642,35 @@
 	height:.5rem;
 	border-radius: 50%;
 	box-shadow:0px 0px .12rem rgba(223,32,32,0.25) inset;
-	background:url(../img/pz_down.png) center .12rem no-repeat #fff;
+	background:url(/img/pz_down.png) center .12rem no-repeat #fff;
 	background-size: .25rem .3rem;
 }
 .freefund-list li:first-child {	
-	background:url(../img/1-1@2x.png) .1rem center no-repeat;
+	background:url(/img/1-1@2x.png) .1rem center no-repeat;
 	background-size: .5rem .5rem;
 }
 .freefund-list li:nth-child(2) {	
-	background:url(../img/2-2@2x.png) .1rem center no-repeat;
+	background:url(/img/2-2@2x.png) .1rem center no-repeat;
 	background-size: .5rem .5rem;
 }
 .freefund-list li:nth-child(3) {	
-	background:url(../img/3-3@2x.png) .1rem center no-repeat;
+	background:url(/img/3-3@2x.png) .1rem center no-repeat;
 	background-size: .5rem .5rem;
 }
 .freefund-list li:nth-child(4) {	
-	background:url(../img/4-4@2x.png) .1rem center no-repeat;
+	background:url(/img/4-4@2x.png) .1rem center no-repeat;
 	background-size: .5rem .5rem;
 }
 .freefund-list li:nth-child(5) {	
-	background:url(../img/5-5@2x.png) .1rem center no-repeat;
+	background:url(/img/5-5@2x.png) .1rem center no-repeat;
 	background-size: .5rem .5rem;
 }
 .freefund-list li:nth-child(6) {	
-	background:url(../img/6-6@2x.png) .1rem center no-repeat;
+	background:url(/img/6-6@2x.png) .1rem center no-repeat;
 	background-size: .5rem .5rem;
 }
 .freefund-list li:nth-child(7) {	
-	background:url(../img/7-7@2x.png) .1rem center no-repeat;
+	background:url(/img/7-7@2x.png) .1rem center no-repeat;
 	background-size: .5rem .5rem;
 }
 
@@ -663,7 +683,7 @@
 .invite-friend {
 	width:100%;
 	min-height:1.5rem;
-	background:url(../img/tg_btdz.png) no-repeat;
+	background:url(/img/tg_btdz.png) no-repeat;
 	background-size: 100% 100%;
 	margin-top: .3rem;
 }
@@ -671,7 +691,7 @@
 	border-radius: .1rem;
 	height: 3rem;
 	padding:.1rem .05rem;
-	background:url(../img/tg_sm.png) center center no-repeat #fff;
+	background:url(/img/tg_sm.png) center center no-repeat #fff;
 	background-size: 95% 3rem;
 	margin-top: .1rem;
 }
@@ -745,17 +765,17 @@
 	text-align: center;
 }
 .share-list span:first-child {
-	background:url(../img/tg_pyq.png) top center no-repeat;
+	background:url(/img/tg_pyq.png) top center no-repeat;
 	background-size: .45rem .45rem;
 	padding-top:.5rem;
 }
 .share-list span:nth-child(2) {
-	background:url(../img/tg_qq.png) top center no-repeat;
+	background:url(/img/tg_qq.png) top center no-repeat;
 	background-size: .45rem .45rem;
 	padding-top:.5rem;
 }
 .share-list span:nth-child(3) {
-	background:url(../img/tg_wx.png) top center no-repeat;
+	background:url(/img/tg_wx.png) top center no-repeat;
 	background-size: .45rem .45rem;
 	padding-top:.5rem;
 }
@@ -854,15 +874,15 @@
 	height:.45rem;
 }
 .kefu-input span.sound {
-	background:url(../img/sound.png) center center no-repeat;
+	background:url(/img/sound.png) center center no-repeat;
 	background-size: .38rem .38rem;
 }
 .kefu-input span.smile {
-	background:url(../img/biaoq.png) center center no-repeat;
+	background:url(/img/biaoq.png) center center no-repeat;
 	background-size: .28rem .28rem;
 }
 .kefu-input span.add {
-	background:url(../img/add.png) center center no-repeat;
+	background:url(/img/add.png) center center no-repeat;
 	background-size: .3rem .3rem;
 }
 
@@ -875,7 +895,7 @@
 	height: 1.6rem;
 	position: fixed;
 	top:0;left:0;
-	background:url(../img/wd_bg@2x.png) no-repeat;
+	background:url(/img/wd_bg@2x.png) no-repeat;
 	background-size: 100% 1.6rem;
 }
 .account-top p.title {
@@ -916,7 +936,7 @@
 	padding:.1rem 0;
 	border-bottom: .01rem solid #DEDEDE;
 	overflow: hidden;
-	background:url(../img/sy_right.png) right center no-repeat;
+	background:url(/img/sy_right.png) right center no-repeat;
 	background-size:.15rem .15rem;
 }
 .account-container ul li a img {
@@ -977,27 +997,27 @@
 	line-height: .5rem;
 }
 .recharge-list li:first-child p{
-	background:url(../img/czfs_kjzf@2x.png) left center no-repeat;
+	background:url(/img/czfs_kjzf@2x.png) left center no-repeat;
 	background-size: .53rem .15rem;
 	padding-left: .6rem;
 }
 .recharge-list li:nth-child(2) p{
-	background:url(../img/czfs_zxzf@2x.png) .05rem center no-repeat;
+	background:url(/img/czfs_zxzf@2x.png) .05rem center no-repeat;
 	background-size: .37rem .23rem;
 	padding-left: .6rem;
 }
 .recharge-list li:nth-child(3) p{
-	background:url(../img/czfs_yhzz@2x.png) .05rem center no-repeat;
+	background:url(/img/czfs_yhzz@2x.png) .05rem center no-repeat;
 	background-size: .3rem .3rem;
 	padding-left: .6rem;
 }
 .recharge-list li:nth-child(4) p{
-	background:url(../img/czfs_zfbsm@2x.png) .05rem center no-repeat;
+	background:url(/img/czfs_zfbsm@2x.png) .05rem center no-repeat;
 	background-size: .3rem .3rem;
 	padding-left: .6rem;
 }
 .recharge-list li:nth-child(5) p{
-	background:url(../img/czfs_wxzf@2x.png) .05rem center no-repeat;
+	background:url(/img/czfs_wxzf@2x.png) .05rem center no-repeat;
 	background-size: .3rem .3rem;
 	padding-left: .6rem;
 }
@@ -1028,7 +1048,7 @@
 	border-bottom: none;	
 }
 li.last {
-	background:url(../img/sy_right.png) right center no-repeat;
+	background:url(/img/sy_right.png) right center no-repeat;
 	background-size: .15rem .15rem;
 }
 .bank-list li label {
@@ -1433,19 +1453,19 @@ li.last {
 	padding:.15rem 0 .15rem .55rem;
 }
 .relation-center ul li:first-child{
-	background:url(../img/gy_dh.png) left center no-repeat;
+	background:url(/img/gy_dh.png) left center no-repeat;
 	background-size:.4rem .4rem;
 }
 .relation-center ul li:nth-child(2){
-	background:url(../img/gy_yx.png) left center no-repeat;
+	background:url(/img/gy_yx.png) left center no-repeat;
 	background-size:.4rem .4rem;
 }
 .relation-center ul li:nth-child(3){
-	background:url(../img/gy_qq.png) left center no-repeat;
+	background:url(/img/gy_qq.png) left center no-repeat;
 	background-size:.4rem .4rem;
 }
 .relation-center ul li:last-child{
-	background:url(../img/gy_dz.png) left center no-repeat;
+	background:url(/img/gy_dz.png) left center no-repeat;
 	background-size:.4rem .4rem;
 }
 
