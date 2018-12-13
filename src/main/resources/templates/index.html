@@ -25,7 +25,7 @@
   <div class="swiper-pagination"></div>
 </div>
 
-<!---->
+<!--导航-->
 <div class="five-contianer">
   <ul class="clear">
     <li><a href="newsTask.html">
@@ -43,61 +43,64 @@
     <li><a href="appDown.html">
       APP下载
     </a></li>
-
-    <li><a href="newsTask.html">
-      新手任务
-    </a></li>
-    <li><a href="helpCenter.html">
-      帮助中心
-    </a></li>
-    <li><a href="industry.html">
-      行业资讯
-    </a></li>
-    <li><a href="newsNotice.html">
-      最新公告
-    </a></li>
-    <li><a href="appDown.html">
-      APP下载
-    </a></li>
   </ul>
 </div>
 
-<!--配资-->
+<!--案列-->
 <div class="four-funding">
-  <ul class="clear fund-list">
+  <ul id="pz-type" class="clear fund-list">
     <li class="active">按月配资</li>
     <li>按天配资</li>
-    <li>免息配资</li>
-    <li>免费配资</li>
+    <li id="mx-li">免息配资</li>
+    <li id="free-li">免费配资</li>
   </ul>
   <div class="fund-center">
     <div class="fund-img">
-      <p class="title">资金：<b class="red txt-s16">1000</b>元起&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;倍数：最高<b
-              class="red txt-s16">10</b>倍</p>
-				<span class="tip-title">
-					极速开户，利率低至0.8%/月 <br>
-					最低1月起配未申请终止操盘，延续自动延期
-				</span>
+      <p class="title">
+        资金：<b class="red txt-s16"></b>100元起&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        倍数：最高<b class="red txt-s16"></b>10倍
+      </p>
+            <span class="tip-title">
+                极速开户，利率低至1%/月 <br>
+                最低1月起配，未申请终止操盘，延续自动延期
+            </span>
+    </div>
+    <div class="fund-img" style="display: none">
+      <p class="title">
+        资金：<b class="red txt-s16"></b>100元起&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        倍数：最高<b class="red txt-s16"></b>10倍
+      </p>
+            <span class="tip-title">
+                极速开户，利率低至1%/天 <br>
+                最低1天起配，未申请终止操盘，延续自动延期
+            </span>
+    </div>
+    <div class="fund-img" style="display: none">
+      <p class="title">
+        资金：<b class="red txt-s16"></b>100元起&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        倍数：最高<b class="red txt-s16"></b>10倍
+      </p>
+            <span class="tip-title">
+                极速开户，利率低至0%/天 <br>
+                免息天数长达10天
+            </span>
+    </div>
+    <div class="fund-img" style="display: none">
+      <p class="title">
+        平台出：<b class="red txt-s16" id="free-money">3000</b>元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        你出：<b class="red txt-s16" id="free-bzj">10</b>元
+      </p>
+            <span class="tip-title">
+                总共<span class="red"></span>100元配资资金，10个交易日。 <br>
+                盈利全归你，平台不收取任何费用。
+            </span>
     </div>
   </div>
-  <button type="button" class="btn lite-btn">立即配资</button>
 </div>
 
 <!--底部-->
 <footer th:include="base/footer"></footer>
 
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    pagination: '.swiper-pagination',
-    paginationClickable: true,
-    spaceBetween: 0,
-    autoplay: 2500
-  });
-</script>
-<script>
-  $(function () {
-    $('#demo1').scrollbox();
-  })
-</script>
+<script src="/js/index.js"></script>
 </body>
 </html>
