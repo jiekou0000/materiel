@@ -7,7 +7,7 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 $(function () {
-    // 隐藏显示
+    // 案列隐藏显示
     $('#pz-type li').click(function () {
         $('.fund-center .fund-img').hide().eq($('#pz-type li').index(this)).show();
     })

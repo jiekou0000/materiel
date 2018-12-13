@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/head"></head>
+
+<body>
+<header>
+  <div class="header-wrap">
+    <h3>基础物料</h3>
+    <a href="#" class="left"><img src="/img/sy_back.png"/></a>
+  </div>
+</header>
+
+<!--种类栏：灯光-->
+<div class="mouthfund-list">
+  <ul class="">
+    <li class="active"><a href="/base-mate/light">灯光</a></li>
+    <li><a href="/wap/member/day/dayIndex.html">按天配资</a></li>
+    <li><a href="/wap/member/mx/mxIndex.html">免息配资</a></li>
+    <li><a href="/wap/member/free/freeIndex.html">免费体验</a></li>
+  </ul>
+</div>
+
+<!--灯光类目-->
+<div class="record-center">
+  <p class="txt-red" style="font-weight:bold;">帕灯</p>
+  <table border="0" cellpadding="0" cellspacing="0" class="record-table">
+    <tr>
+      <th>单价：</th>
+      <td><b id="etcUnitPrice" class="orange">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个每天2元</b></td>
+    </tr>
+    <tr>
+      <th>预计所需数量：</th>
+      <td><input maxlength="10" minlength="1" type="text" id="etcNum"/>个</td>
+    </tr>
+    <tr>
+      <th>预计使用天数：</th>
+      <td><input maxlength="10" minlength="1" type="text" id="etcDay"/>天</td>
+    </tr>
+    <tr>
+      <th>预计总费用：</th>
+      <td><input type="text" id="etcTotalMoney" readonly>元</input></td>
+    </tr>
+  </table>
+  <div class="detail-group">
+    <a onclick="etcSure()">确定</a>
+    <a onclick="etcUndeterm()">待定</a>
+  </div>
+</div>
+
+<div class="record-center">
+  <p class="txt-red" style="font-weight:bold;">筒灯</p>
+  <table border="0" cellpadding="0" cellspacing="0" class="record-table">
+    <tr>
+      <th>单价：</th>
+      <td><b id="downUnitPrice" class="orange">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个每天3元</b></td>
+    </tr>
+    <tr>
+      <th>预计所需数量：</th>
+      <td><input maxlength="10" minlength="1" type="text" id="downNum"/>个</td>
+    </tr>
+    <tr>
+      <th>预计使用天数：</th>
+      <td><input maxlength="10" minlength="1" type="text" id="downDay"/>天</td>
+    </tr>
+    <tr>
+      <th>预计总费用：</th>
+      <td><input type="text" id="downTotalMoney" readonly>元</input></td>
+    </tr>
+  </table>
+  <div class="detail-group">
+    <a onclick="downSure()">确定</a>
+    <a onclick="downUndeterm()">待定</a>
+  </div>
+</div>
+
+<!--底部-->
+<footer th:include="base/footer"></footer>
+
+<script src="/js/basemate/light.js"></script>
+</body>
+</html>

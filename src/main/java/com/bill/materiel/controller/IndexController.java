@@ -16,9 +16,8 @@ public class IndexController {
      *
      * @return String
      */
-    @RequestMapping(value = {"/index.html", "/index"})
+    @RequestMapping(value = "/index")
     public String index() {
         return "index";
     }
-
 }
