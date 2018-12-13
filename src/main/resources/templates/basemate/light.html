@@ -3,6 +3,8 @@
 <head th:include="base/head"></head>
 
 <body>
+<script type="text/javascript" src="/lib/js/vue.min.js"></script>
+
 <header>
   <div class="header-wrap">
     <h3>基础物料</h3>
@@ -30,11 +32,11 @@
     </tr>
     <tr>
       <th>预计所需数量：</th>
-      <td><input maxlength="10" minlength="1" type="text" id="etcNum"/>个</td>
+      <td id="etcNumProps"><input v-model="etcNum" maxlength="10" minlength="1" type="text" id="etcNum"/>个</td>
     </tr>
     <tr>
       <th>预计使用天数：</th>
-      <td><input maxlength="10" minlength="1" type="text" id="etcDay"/>天</td>
+      <td id="etcDayProps"><input v-model="etcDay" maxlength="10" minlength="1" type="text" id="etcDay"/>天</td>
     </tr>
     <tr>
       <th>预计总费用：</th>
@@ -56,11 +58,11 @@
     </tr>
     <tr>
       <th>预计所需数量：</th>
-      <td><input maxlength="10" minlength="1" type="text" id="downNum"/>个</td>
+      <td id="downNumProps"><input v-model="downNum" maxlength="10" minlength="1" type="text" id="downNum"/>个</td>
     </tr>
     <tr>
       <th>预计使用天数：</th>
-      <td><input maxlength="10" minlength="1" type="text" id="downDay"/>天</td>
+      <td id="downDayProps"><input v-model="downDay" maxlength="10" minlength="1" type="text" id="downDay"/>天</td>
     </tr>
     <tr>
       <th>预计总费用：</th>
@@ -77,5 +79,46 @@
 <footer th:include="base/footer"></footer>
 
 <script src="/js/basemate/light.js"></script>
+
+<script type="text/javascript" th:inline="javascript">
+  var ectNumValue = 1, etcDayValue = 1, downNumValue = 1, downDayValue = 1;
+  // etc数量vm
+  var etcNumVm = new Vue({
+    el: '#etcNumProps',
+    data: {
+      etcNum: 1
+    },
+    methods: {},
+    computed: {},
+    watch: {
+      etcNum: function (val) {
+        this.etcNum = val;
+      }
+    }
+  });
+  etcNumVm.$watch('etcNum', function (newValue) {
+    ectNumValue = parseInt(newValue);
+    $("#etcTotalMoney").val((Math.round(parseFloat(ectNumValue*etcDayValue))).toFixed(2));
+  });
+
+  // etc使用天数vm
+  var etcDayVm = new Vue({
+    el: '#etcDayProps',
+    data: {
+      etcDay: 1
+    },
+    methods: {},
+    computed: {},
+    watch: {
+      etcDay: function (val) {
+        this.etcDay = val;
+      }
+    }
+  });
+  etcDayVm.$watch('etcDay', function (newValue) {
+    etcDayValue = parseInt(newValue);
+    $("#etcTotalMoney").val((Math.round(parseFloat(ectNumValue*etcDayValue))).toFixed(2));
+  })
+</script>
 </body>
 </html>
