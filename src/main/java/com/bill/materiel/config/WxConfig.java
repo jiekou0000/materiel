@@ -1,14 +1,19 @@
 package com.bill.materiel.config;
 
-import lombok.Data;
+import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Bill
  */
+@Component
 @ConfigurationProperties(prefix = "wx")
-@Data
-public class WxProperties {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class WxConfig {
     private String contactUs;
     private String serverUrl;
     private String subscribeReply;

@@ -48,7 +48,7 @@
                /* }*/
             });
         }
-    }
+    };
 
     $.fn.sidebarMenu.defaults = {
         url: null,

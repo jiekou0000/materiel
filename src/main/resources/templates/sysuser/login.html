@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/head"></head>
+
+<body>
+<div class="fixed-wrap">
+  <header>
+    <div class="header-wrap">
+      <h3>登录</h3>
+      <a href="#" class="left"><img src="/img/sy_back.png"/></a>
+    </div>
+  </header>
+
+  <div class="register-container">
+    <h2>快速登录</h2>
+    <p>
+      <span><img src="/img/dl_yzm.png"/></span>
+      <input id="loginName" type="text" placeholder="请输入手机号"/>
+    </p>
+    <p>
+      <span><img src="/img/dl_mm.png"/></span>
+      <input id="password" type="password" placeholder="请输入密码"/>
+      <i id="showOrHidePwd"></i>
+    </p>
+    <p class="yzm">
+      <span><img src="/img/dl_yzm.png"/></span>
+      <input id="pictureCode" type="text" placeholder="图片验证码"/>
+      <!--<img id="picture" width="100" height="30" src="/createCode?code=1111"-->
+           <!--onclick="this.src = '/createCode?code=' + Math.random()"-->
+           <!--src="/createCode?code=1111" title="看不清楚？点击刷新" class="yzm-img"/>-->
+    </p>
+
+    <button id="btn_login" class="btn register-btn" type="button"><span id="loginText">登录</span></button>
+
+    <div class="clear mt10 color9">
+      <a href="/wap/forgetPassword.html" class="fl forget color9">忘记密码？</a>
+      <p class="fr">还没有账户？<a href="/wap/register.html" class="blue">立即注册</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    //表单提交开始beg
+    $("#btn_login").click(function () {
+      $('#loginText').html("登录中...");
+      var loginName = $("#loginName").val();
+      var password = $("#password").val();
+      var pictureCode = $("#pictureCode").val();
+
+      if (loginName == "") {
+        $('#loginText').html("立即登录");
+        msgErr('登录名不可为空!');
+        return;
+      }
+      if (password == "") {
+        $('#loginText').html("立即登录");
+        msgErr('密码不可为空!');
+        return;
+      }
+      if (pictureCode == "") {
+        $('#loginText').html("立即登录");
+        msgErr('图片验证码不可为空!');
+        return;
+      }
+      $.ajax({
+        type: "post",
+        url: "/do-login",
+        dataType: "json",
+        data: {
+          loginName: loginName,
+          password: password,
+          pictureCode: pictureCode
+        },//传递页面索引
+        success: function (result) {
+          if (result.errorCode == "0") {
+            var reqUrl = getUrlParam("url");
+            if (reqUrl == "/wap/login" || reqUrl == "/wap/login.html" || reqUrl == null) {
+              window.location.href = "/wap/member/index";
+            } else {
+              window.location.href = reqUrl;
+            }
+          } else {
+            msgErr(result.message);
+            document.getElementById("picture").src = "/createCode?code=" + Math.random();
+            $('#loginText').html("立即登录");
+          }
+        },
+        error: function () {
+          msgErr('请求异常,请联系管理员!');
+          document.getElementById("picture").src = "/createCode?code=" + Math.random();
+        }
+      });
+    });
+    //表单提交结束end
+  });
+</script>
+</body>
+</html>

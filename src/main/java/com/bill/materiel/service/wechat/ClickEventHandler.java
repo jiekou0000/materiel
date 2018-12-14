@@ -1,6 +1,6 @@
 package com.bill.materiel.service.wechat;
 
-import com.bill.materiel.config.WxProperties;
+import com.bill.materiel.config.WxConfig;
 import com.bill.materiel.utils.Utils;
 import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
@@ -21,12 +21,12 @@ import java.util.Map;
 @Service
 public class ClickEventHandler implements WxMpMessageHandler{
     @Autowired
-    private WxProperties wxProperties;
+    private WxConfig wxConfig;
 
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage, Map<String, Object> context, WxMpService wxMpService, WxSessionManager sessionManager) throws WxErrorException {
         if(wxMessage.getEventKey().equals("contact_us")){
-            return pushText(wxMessage, Utils.buildText(wxProperties.getContactUs()));
+            return pushText(wxMessage, Utils.buildText(wxConfig.getContactUs()));
         }else if(wxMessage.getEventKey().equals("online_help")){
             return pushText(wxMessage, "很高兴为您服务,请简要输入您的问题,我们会耐心为您解答");
         }
@@ -47,7 +47,7 @@ public class ClickEventHandler implements WxMpMessageHandler{
         WxMpXmlOutNewsMessage.Item item = new WxMpXmlOutNewsMessage.Item();
         item.setPicUrl("http://222.73.56.22:89/information/news/6aad4e23-4d35-4bef-8b79-d7a8851314ac.jpg");
         item.setTitle("常见问题");
-        item.setUrl(wxProperties.getServerUrl()+"/#/wx/commonProblem");
+        item.setUrl(wxConfig.getServerUrl()+"/#/wx/commonProblem");
         return item;
     }
 }

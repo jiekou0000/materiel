@@ -1,6 +1,6 @@
 package com.bill.materiel.service.wechat;
 
-import com.bill.materiel.config.WxProperties;
+import com.bill.materiel.config.WxConfig;
 import com.bill.materiel.utils.Utils;
 import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
@@ -12,7 +12,6 @@ import me.chanjar.weixin.mp.bean.WxMpXmlOutTextMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -22,11 +21,11 @@ import java.util.Map;
 public class SubscribeEventHandler implements WxMpMessageHandler {
 
     @Autowired
-    private WxProperties wxProperties;
+    private WxConfig wxConfig;
 
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage, Map<String, Object> context, WxMpService wxMpService, WxSessionManager sessionManager) throws WxErrorException {
-        return pushText(wxMessage, wxProperties.getSubscribeReply());
+        return pushText(wxMessage, wxConfig.getSubscribeReply());
     }
 
     private WxMpXmlOutMessage pushText(WxMpXmlMessage wxMpXmlMessage, String text){

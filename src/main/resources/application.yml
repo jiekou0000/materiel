@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8081
 
 spring:
   jpa:
@@ -16,8 +16,8 @@ spring:
 
 wx:
   serverUrl: http://lijian.host.wenmingkeji.com
-  subscribeReply: ÄúºÃ£¡»¶Ó­ÄãµÄµ½À´£¡;
-    ¿Í·þÈÈÏß£º1880001111
+  subscribeReply: ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½Ó­ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½;
+    ï¿½Í·ï¿½ï¿½ï¿½ï¿½ß£ï¿½1880001111
 
 logging:
   file: ./mylogs/materials.log

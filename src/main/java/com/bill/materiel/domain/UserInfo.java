@@ -27,9 +27,9 @@ public class UserInfo {
     @GeneratedValue
     private Long id;
 
-    private String name;
-
-    private String openId;
-
     private String phoneNum;
+
+    private String password;
+
+    private String name;
 }
