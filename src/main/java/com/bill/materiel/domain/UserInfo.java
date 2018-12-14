@@ -1,14 +1,12 @@
 package com.bill.materiel.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 /**
  * UserInfo
@@ -22,6 +20,7 @@ import javax.persistence.Table;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class UserInfo {
     @Id
     @GeneratedValue
@@ -32,4 +31,6 @@ public class UserInfo {
     private String password;
 
     private String name;
+
+    private Date time;
 }

@@ -50,10 +50,10 @@ public class LoginController {
         return "sysuser/login";
     }
 
-    // 【HTTP协议】会员登录请求接口
+    //【HTTP协议】用户登录请求接口
     @RequestMapping(value = "/do-login", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<Message> login(LoginReq req) {
+    public ResponseEntity<Message> doLogin(LoginReq req) {
         Message message = sysUserService.doLogin(req);
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
