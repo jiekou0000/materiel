@@ -17,8 +17,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Getter
 @Setter
 public class LoginReq {
-    @NotBlank(message = "手机号不能为空")
-    private String phoneNum;
+    @NotBlank(message = "登录名不能为空")
+    private String loginName;
 
     @NotBlank(message = "密码不能为空")
     private String password;

@@ -15,5 +15,5 @@ public class WebConstant {
     /**
      * 登陆跳转uri
      */
-    public static String LOGIN_REDIRECT_URI = "loginRedirectUri";
+    public static String LOGIN_REDIRECT_URI = "";
 }

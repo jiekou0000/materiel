@@ -1,12 +1,12 @@
 $(document).ready(function () {
   // 注册表单提交开始
   $("#btn_register").click(function () {
-    var name = $('#name').val();
+    var loginName = $('#loginName').val();
     var phoneNum = $('#phoneNum').val();
     var password = $('#password').val();
     var confirmPwd = $('#confirmPwd').val();
-    if (name == "" || name == null) {
-      msgErr('姓名不能为空!');
+    if (loginName == "" || loginName == null) {
+      msgErr('登录名不能为空!');
       return;
     }
     if (phoneNum == "" || phoneNum == null) {
@@ -31,7 +31,7 @@ $(document).ready(function () {
       url: "/do-register",
       dataType: "json",
       data: {
-        name: name,
+        loginName: loginName,
         phoneNum: phoneNum,
         password: password
       },

@@ -30,7 +30,7 @@ public class UserInfo {
 
     private String password;
 
-    private String name;
+    private String loginName;
 
     private Date time;
 }

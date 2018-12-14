@@ -20,8 +20,8 @@ import javax.validation.constraints.Pattern;
 @Getter
 @Setter
 public class RegisterReq {
-    @NotBlank(message = "姓名不能为空")
-    private String name;
+    @NotBlank(message = "登录名不能为空")
+    private String loginName;
 
     @NotBlank(message = "手机号不能为空")
     @Pattern(regexp = "^[1][3,4,5,6,7,8,9][0-9]{9}$", message = "手机号码格式不正确")
