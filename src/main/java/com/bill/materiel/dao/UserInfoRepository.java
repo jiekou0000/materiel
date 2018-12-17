@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.Query;
 public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
     UserInfo findByLoginName(String name);
 
-    @Query(nativeQuery = true, value = "select id, password from user_info where login_name = ?1")
+    @Query(nativeQuery = true, value = "select phone_num, password from user_info where login_name = ?1")
     Object findByName(String name);
 }

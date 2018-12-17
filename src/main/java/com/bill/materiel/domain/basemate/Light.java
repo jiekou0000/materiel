@@ -26,11 +26,13 @@ public class Light {
     @GeneratedValue
     private Long id;
 
+    private String phoneNum; // 下单者手机号
+
     private Integer type; // 类型：0 帕灯， 1 筒灯， ...
 
     private Long num; // 所需数量
 
-    private Date startTime; // 使用开始时间
+    private String startTime; // 使用开始时间
 
     private Long day; // 所需天数
 

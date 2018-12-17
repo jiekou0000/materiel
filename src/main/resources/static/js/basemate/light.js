@@ -1,16 +1,38 @@
 // etcSure
 function etcSure() {
-  console.log("etcSure");
+  var num = $("#etcNum").val();
+  var startTime = $("#etcStartTime").val();
+  var day = $("#etcDay").val();
+  if (num == "") {
+    msgErr('所需数量不可为空!');
+    return;
+  }
+  if (startTime == "") {
+    msgErr('开始使用时间不可为空!');
+    return;
+  }
+  if (day == "") {
+    msgErr('预计使用天数不可为空!');
+    return;
+  }
+
   $.ajax({
     type: "post",
-    url: "/base-mate/light/etc-sure",
+    url: "/base-mate/light/etc-order",
     dataType: "json",
     data: {
-      loginName: "bill",
-      password: "111111"
+      type: 0,
+      num: num,
+      startTime: startTime,
+      day: day,
+      state: 1
     },
     success: function (result) {
-      msgOk(result.toString());
+      if (result.status == "SUCCESS") {
+        msgOk("下单成功，可在个人订单记录中查询")
+      } else {
+        msgErr(result.error);
+      }
     },
     error: function (res) {
       if (res.status == 401) {
