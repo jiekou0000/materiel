@@ -32,5 +32,5 @@ public class UserInfo {
 
     private String loginName;
 
-    private Date time;
+    private Date createTime;
 }
