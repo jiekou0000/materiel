@@ -17,9 +17,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  */
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurationSupport {
-    @Autowired
-    private UserInterceptor userInterceptor;
-
     @Bean
     public WxMpService wxMpService(){
         WxMpInMemoryConfigStorage config = new WxMpInMemoryConfigStorage();
@@ -47,15 +44,5 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
                 "classpath:/resources/",
                 "classpath:/static/"
         );
-    }
-
-    /**
-     * 拦截器配置
-     */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        // 多个拦截器组成一个拦截器链
-        registry.addInterceptor(userInterceptor).addPathPatterns("/sys-user/**");
-        super.addInterceptors(registry);
     }
 }

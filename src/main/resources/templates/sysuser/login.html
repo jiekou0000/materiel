@@ -25,7 +25,7 @@
     <button id="btn_login" class="btn register-btn" type="button"><span id="loginText">登录</span></button>
 
     <div class="clear mt10 color9">
-      <p class="fr">还没有账户？<a href="/register" class="blue">立即注册</a></p>
+      <p class="fr">还没有账户？<a href="/tpl/register" class="blue">立即注册</a></p>
     </div>
   </div>
 </div>
@@ -60,17 +60,16 @@
         return;
       }
 
+      var headers = "Basic " + btoa(loginName + ":" + password);
       $.ajax({
         type: "post",
         url: "/do-login",
-        dataType: "json",
-        data: {
-          loginName: loginName,
-          password: password
-        },//传递页面索引
+        beforeSend: function(request) {
+          request.setRequestHeader("Authorization", headers);
+        },
         success: function (result) {
           if (result.status == "SUCCESS") {
-            loadingSuccessLocation("登录成功", result.data); // todo should be a function not a page
+            loadingSuccessLocation("登录成功", result.data);
           } else {
             msgErr(result.error);
             $('#loginText').html("立即登录");

@@ -27,10 +27,11 @@ public class RegisterController {
      *
      * @return
      */
-    @RequestMapping(value = "/register")
+    @RequestMapping(value = "/tpl/register")
     public String register() {
         return "sysuser/register";
     }
+
 
     //【HTTP协议】用户注册请求接口
     @RequestMapping(value = "/do-register", method = RequestMethod.POST)

@@ -9,6 +9,7 @@ import com.bill.materiel.utils.message.Message;
 import com.bill.materiel.utils.message.MessageType;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -32,23 +33,14 @@ public class SysUserService {
     /**
      * 登陆
      */
-    public Message doLogin(@Valid LoginReq req) {
-        UserInfo exist = userInfoRepository.findByLoginName(req.getLoginName());
-        if (exist == null) {
-            return new Message(MessageType.ERROR, "登录名不存在");
-        }
-        if (!StringUtils.equals(req.getPassword(), exist.getPassword())) {
-            return new Message(MessageType.ERROR, "登录名或密码错误");
-        }
-
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        HttpSession session = request.getSession();
-        session.setAttribute(WebConstant.SESSION_SYS_USER, exist);
-
+    public Message doLogin() {
         if (StringUtils.isEmpty(WebConstant.LOGIN_REDIRECT_URI)) {
-            WebConstant.LOGIN_REDIRECT_URI = "/index";
+            return new Message(MessageType.SUCCESS, (Object) "/index");
+        } else {
+            String[] str = WebConstant.LOGIN_REDIRECT_URI.split("/");
+            WebConstant.LOGIN_REDIRECT_URI = "/tpl/" + str[1] + "/" + str[2];
+            return new Message(MessageType.SUCCESS, (Object) WebConstant.LOGIN_REDIRECT_URI);
         }
-        return new Message(MessageType.SUCCESS, (Object) WebConstant.LOGIN_REDIRECT_URI);
     }
 
     /**
@@ -61,7 +53,7 @@ public class SysUserService {
         }
         UserInfo userInfo = UserInfo.builder()
                 .phoneNum(req.getPhoneNum())
-                .password(req.getPassword())
+                .password(new BCryptPasswordEncoder().encode(req.getPassword()))
                 .loginName(req.getLoginName())
                 .time(new Date())
                 .build();

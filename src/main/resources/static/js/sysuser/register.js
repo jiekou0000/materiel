@@ -37,7 +37,7 @@ $(document).ready(function () {
       },
       success: function (result) {
         if (result.status == "SUCCESS") {
-          loadingSuccessLocation("注册成功", "/login");
+          loadingSuccessLocation("注册成功", "/tpl/login");
         } else {
           msgErr(result.error);
         }

@@ -3,15 +3,21 @@ function etcSure() {
   console.log("etcSure");
   $.ajax({
     type: "post",
-    url: "/sys-user/etc-sure",
+    url: "/base-mate/light/etc-sure",
     dataType: "json",
     data: {
+      loginName: "bill",
+      password: "111111"
     },
     success: function (result) {
       msgOk(result.toString());
     },
-    error: function () {
-      window.location.href = "/login";
+    error: function (res) {
+      if (res.status == 401) {
+        window.location.href = "/tpl/login?uri=/base-mate/light/etc-sure";
+      } else {
+        msgErr('请求异常,请联系管理员!');
+      }
     }
   });
 }
