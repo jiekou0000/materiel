@@ -27,8 +27,16 @@ public class UserOrderRecordController {
      * 用户"确定订单"页面
      */
     @RequestMapping(value = "/user/order/sure")
-    public String light() {
+    public String orderSure() {
         return "sysuser/orderSure";
+    }
+
+    /**
+     * 用户"待定订单"页面
+     */
+    @RequestMapping(value = "/user/order/pend")
+    public String orderPend() {
+        return "sysuser/orderPend";
     }
 
     /**

@@ -6,7 +6,7 @@ function bind(pageIndex) {
     url: "/user/order/record",
     async: false, // 作用是防止在ajax成功调用之前就调用$("#Pagination").pagination,这个时候数据个数还没有初始化
     dataType: "json",
-    data: "&rows=" + rows + "&page=" + (pageIndex) + "&state=1",//传递页面索引
+    data: "&rows=" + rows + "&page=" + (pageIndex) + "&state=0",//传递页面索引
     // 发送请求前，显示加载动画
     beforeSend: function () {
       $("#divload").show();
@@ -26,7 +26,7 @@ function bind(pageIndex) {
         if (total == 0) {
           $("#pagination").hide();
           temp += '\t<div class="record-center">\n' +
-              '<p style="color: red">无确定订单记录</p>\n' +
+              '<p style="color: red">无待定订单记录</p>\n' +
               '</div>';
           $("#dataShow").html(temp); // 将创建的新行附加在DIV中
           return;
@@ -58,7 +58,7 @@ function bind(pageIndex) {
               '                        </tr>\n' +
               '                    </table>\n' +
               '                    <div class="detail-group">\n' +
-              '                        <span><a onclick="pendOrder(' + item.id + ')">改为待定</a></span>' +
+              '                        <span><a onclick="sureOrder(' + item.id + ')">改为确定</a></span>' +
               '                        <span><a onclick="cancelOrder(' + item.id + ')">撤销订单</a></span>' +
               '                    </div>' +
               '     </div>';
@@ -71,7 +71,7 @@ function bind(pageIndex) {
     },
     error: function (res) {
       if (res.status == 401) {
-        window.location.href = "/tpl/login?uri=/user/order/sure";
+        window.location.href = "/tpl/login?uri=/user/order/pend";
       } else {
         msgErr('请求异常,请联系管理员!');
       }
@@ -94,13 +94,13 @@ function bind(pageIndex) {
   }
 }
 
-// 改为待定
-function pendOrder(orderId) {
+// 改为确定
+function sureOrder(orderId) {
   $.ajax({
     type: "post",
     url: "/user/order/change-sate",
     dataType: "json",
-    data: "&orderId=" + orderId + "&state=0",
+    data: "&orderId=" + orderId + "&state=1",
     success: function (result) {
       if (result.status == "SUCCESS") {
         location.reload();
@@ -110,7 +110,7 @@ function pendOrder(orderId) {
     },
     error: function (res) {
       if (res.status == 401) {
-        window.location.href = "/tpl/login?uri=/user/order/sure";
+        window.location.href = "/tpl/login?uri=/user/order/pend";
       } else {
         msgErr('请求异常,请联系管理员!');
       }
@@ -134,7 +134,7 @@ function cancelOrder(orderId) {
     },
     error: function (res) {
       if (res.status == 401) {
-        window.location.href = "/tpl/login?uri=/user/order/sure";
+        window.location.href = "/tpl/login?uri=/user/order/pend";
       } else {
         msgErr('请求异常,请联系管理员!');
       }

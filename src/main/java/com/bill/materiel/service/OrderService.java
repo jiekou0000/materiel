@@ -50,7 +50,7 @@ public class OrderService {
      * order record
      */
     public Message orderRecord(String phoneNum, Integer state, Integer page, Integer rows) {
-        Page<Order> sureOrders = orderRepository.findAll(this.createSpecification(phoneNum, state), PageUtils.pageDataDesc(page, rows, "createTime"));
+        Page<Order> sureOrders = orderRepository.findAll(this.createSpecification(phoneNum, state), PageUtils.pageDataDesc(page, rows, "id"));
         return new Message(MessageType.SUCCESS, sureOrders);
     }
 
