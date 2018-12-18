@@ -1,7 +1,7 @@
 package com.bill.materiel.controller.basemate;
 
-import com.bill.materiel.domain.basemate.Light;
-import com.bill.materiel.service.basemate.BaseMateService;
+import com.bill.materiel.domain.Order;
+import com.bill.materiel.service.OrderService;
 import com.bill.materiel.utils.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +22,7 @@ import java.security.Principal;
 @Controller
 public class BaseMateController {
     @Autowired
-    private BaseMateService baseMateService;
+    private OrderService orderService;
 
     /**
      * 灯光页面
@@ -32,11 +32,13 @@ public class BaseMateController {
         return "basemate/light";
     }
 
-    //【HTTP协议】etc下单 -- 确定 / 待定
-    @RequestMapping(value = "/base-mate/light/etc-order", method = RequestMethod.POST)
+    /**
+     * 【HTTP协议】灯光下单 -- 确定 / 待定
+     */
+    @RequestMapping(value = "/base-mate/light/order", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<Message> etcOrder(Principal user, Light req) {
-        Message message = baseMateService.lightEtcOrder(user.getName(), req);
+    public ResponseEntity<Message> placeOrder(Principal user, Order req) {
+        Message message = orderService.placeOrder(user.getName(), req);
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 }

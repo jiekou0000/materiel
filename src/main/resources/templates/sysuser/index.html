@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/head"></head>
+
+<body>
+<div class="account-head">
+  <div class="account-top">
+    <p class="title" th:text="'您好! '+ ${phoneNum}"></p>
+  </div>
+</div>
+
+<div class="account-container mt10">
+  <ul class="account-list">
+    <li>
+      <a href="/user/order/sure">
+        <p class="fl"><img src="/img/wd_pzdd@2x.png" width="28" height="28"/>订单记录</p>
+        <span class="fr"><i class="red mr5" th:text="${orderNum}"></i>单</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="/wap/member/changePassword">
+        <p class="fl"><img src="/img/wd_xgmm@2x.png" width="28" height="28"/>修改密码</p>
+      </a>
+    </li>
+
+    <li>
+      <a href="/wap/customer/index.html">
+        <p class="fl"><img src="/img/wd-zxkf@2x.png" width="28" height="28"/>联系客服</p>
+      </a>
+    </li>
+
+    <li>
+      <a href="/wap/about.html">
+        <p class="fl"><img src="/img/wd_gywm@2x.png" width="28" height="28"/>关于我们</p>
+      </a>
+    </li>
+  </ul>
+
+  <div class="none mb10" style="line-height: 40px;text-align: center !important;background:#ffffff;font-size:16px;">
+    <a href="/logOut" style="color: #0C0C0C">退出登录</a>
+  </div>
+</div>
+
+
+<!--底部-->
+<footer th:include="base/footer"></footer>
+</body>
+</html>

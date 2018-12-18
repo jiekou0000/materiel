@@ -46,10 +46,14 @@
       <th>预计总费用：</th>
       <td><input type="text" id="etcTotalMoney" readonly>元</input></td>
     </tr>
+    <tr>
+      <th>备注：</th>
+      <td><input type="text" id="etcRemark"/></td>
+    </tr>
   </table>
   <div class="detail-group">
     <a onclick="etcSure()">确定</a>
-    <a onclick="etcUndeterm()">待定</a>
+    <a onclick="etcPend()">待定</a>
   </div>
 </div>
 
@@ -65,7 +69,7 @@
       <td id="downNumProps"><input v-model="downNum" maxlength="10" minlength="1" type="text" id="downNum"/>个</td>
     </tr>
     <tr>
-      <th>开始使用时间：</th>
+      <th>使用时间：</th>
       <td><input placeholder="例：2018-01-01 09:00:00" type="text" id="downStartTime"/></td>
     </tr>
     <tr>
@@ -76,10 +80,14 @@
       <th>预计总费用：</th>
       <td><input type="text" id="downTotalMoney" readonly>元</input></td>
     </tr>
+    <tr>
+      <th>备注：</th>
+      <td><input type="text" id="downRemark"/></td>
+    </tr>
   </table>
   <div class="detail-group">
     <a onclick="downSure()">确定</a>
-    <a onclick="downUndeterm()">待定</a>
+    <a onclick="downPend()">待定</a>
   </div>
 </div>
 

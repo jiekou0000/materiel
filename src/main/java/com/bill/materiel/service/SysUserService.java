@@ -50,7 +50,9 @@ public class SysUserService {
             return new Message(MessageType.SUCCESS, (Object) "/index");
         } else {
             String[] str = WebConstant.LOGIN_REDIRECT_URI.split("/");
-            WebConstant.LOGIN_REDIRECT_URI = "/tpl/" + str[1] + "/" + str[2];
+            if (!StringUtils.equals("user", str[1])) {
+                WebConstant.LOGIN_REDIRECT_URI = "/tpl" + WebConstant.LOGIN_REDIRECT_URI;
+            }
             return new Message(MessageType.SUCCESS, (Object) WebConstant.LOGIN_REDIRECT_URI);
         }
     }

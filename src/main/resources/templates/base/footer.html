@@ -1,7 +1,7 @@
 <div class="foot-wrap">
   <ul class="clear">
     <li class="my_active">
-      <a href="/wap/index.html">
+      <a href="/index">
         <span><img class="my_img" src="/img/sy_yx@2x.png"/></span>
         首页
       </a>
@@ -25,7 +25,7 @@
       </a>
     </li>
     <li class="my_active">
-      <a href="/wap/account/index.html">
+      <a onclick="toMyPage()">
         <span><img class="my_img" src="/img/wd_wx@2x.png"/></span>
         我的
       </a>
@@ -64,3 +64,27 @@
     document.title = begtitle + " - " + $(document).attr("title");
   })
 </script>
+
+<script>
+  function toMyPage() {
+    $.ajax({
+      type: "get",
+      url: "/user/index",
+      dataType: "json",
+      data: {
+      },
+      success: function (result) {
+      },
+      error: function (res) {
+        if (res.status == 401) {
+          window.location.href = "/tpl/login?uri=/user/index";
+        } else if (res.status == 200) {
+          window.location.href = "/user/index"
+        } else {
+          msgErr('请求异常,请联系管理员!');
+        }
+      }
+    });
+  }
+</script>
+

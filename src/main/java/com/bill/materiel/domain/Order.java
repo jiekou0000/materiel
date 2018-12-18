@@ -1,4 +1,4 @@
-package com.bill.materiel.domain.basemate;
+package com.bill.materiel.domain;
 
 import lombok.*;
 
@@ -9,26 +9,28 @@ import javax.persistence.Table;
 import java.util.Date;
 
 /**
- * Light
+ * Order
  *
  * @author Bill
  * @date 2018/12/17 0017
  */
 @Entity
-@Table(name = "light")
+@Table(name = "orders")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Light {
+public class Order {
     @Id
     @GeneratedValue
     private Long id;
 
     private String phoneNum; // 下单者手机号
 
-    private Integer type; // 类型：0 帕灯， 1 筒灯， ...
+    private Integer category; // 类目：10 灯光， 11 音响
+
+    private Integer type; // 类型：1001 帕灯， 1002 筒灯， ...
 
     private Long num; // 所需数量
 
@@ -38,5 +40,7 @@ public class Light {
 
     private Date createTime; // 下单时间
 
-    private Integer state; //订单状态：0 待定， 1 确定
+    private String remark; // 备注
+
+    private Integer state; //订单状态：0 待定，1 确定，2 撤单
 }

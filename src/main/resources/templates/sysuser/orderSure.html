@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/head"></head>
+
+<body>
+<link rel="stylesheet" href="/js/utils/page/page_css.css"/>
+
+<header>
+  <div class="header-wrap">
+    <h3>订单记录</h3>
+    <a href="/user/index" class="left"><img src="/img/sy_back.png"/></a>
+  </div>
+</header>
+
+<!--导航栏-->
+<div class="mouthfund-list">
+  <ul class="">
+    <li class="active"><a href="/user/order/sure">确定订单</a></li>
+    <li><a href="/user/order/pend">待定订单</a></li>
+  </ul>
+</div>
+
+<div class="record-center">
+  <div id="dataShow"></div>
+  <div id="pagination" class="flickr"></div>
+</div>
+
+<script type="text/javascript" src="/js/utils/page/jquery.pagination.js"></script>
+
+<script type="text/javascript" src="/js/sysuser/orderSure.js"></script>
+
+<script>
+  $(function(){
+    try{
+      bind(0);
+    }catch(err){ }
+  })
+</script>
+</body>
+</html>
