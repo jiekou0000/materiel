@@ -9,7 +9,6 @@ function cookie(name) {
     return "";
 }
 
-
 function addCookie(objName, objValue, objHours) {      //添加cookie
     var str = objName + "=" + escape(objValue);
     if (objHours > 0) {                               //为时不设定过期时间，浏览器关闭时cookie自动消失
@@ -19,20 +18,6 @@ function addCookie(objName, objValue, objHours) {      //添加cookie
         str += "; expires=" + date.toDateString();
     }
     document.cookie = str;
-}
-
-
-function addCookie(objName, objValue, objHours) {//添加cookie
-    var str = objName + "=" + escape(objValue);
-    if (objHours > 0) {//为0时不设定过期时间，浏览器关闭时cookie自动消失
-        var date = new Date();
-        var ms = objHours * 3600 * 1000;
-        date.setTime(date.getTime() + ms);
-        str += "; expires=" + date.toDateString();
-    }
-    str += "; path=/";//红色标记必须加上(之前漏写就出现了问题)
-    document.cookie = str;
-//alert("添加cookie成功");
 }
 
 function getCookie(objName) {//获取指定名称的cookie的值
